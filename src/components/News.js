@@ -25,7 +25,7 @@ export class News extends Component {
     }
 
     async componentDidMount() { 
-        let url =`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=243c2fdd5a2f4250b9e220a75f9b215e&page=1&pageSie=20`;
+        let url =`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=243c2fdd5a2f4250b9e220a75f9b215e&page=1&pageSie=21`;
         this.setState({loading:true})
         let data = await fetch (url);
         let parcedData = await data.json();
@@ -39,7 +39,7 @@ export class News extends Component {
 
     handlePrevClick=async()=>{
         console.log("prev");
-        let url =`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=243c2fdd5a2f4250b9e220a75f9b215e&page=${this.state.page-1}&pageSie=20`;
+        let url =`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=243c2fdd5a2f4250b9e220a75f9b215e&page=${this.state.page-1}&pageSie=21`;
         this.setState({loading:true})
         let data = await fetch (url);
         let parcedData = await data.json();
@@ -54,7 +54,7 @@ export class News extends Component {
     handleNextClick=async()=>{
          if(this.state.page+1 <= Math.ceil(this.state.totalResults/20))
          console.log("next");
-         let url =`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=243c2fdd5a2f4250b9e220a75f9b215e&page=${this.state.page+1}&pageSie=20`;
+         let url =`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=243c2fdd5a2f4250b9e220a75f9b215e&page=${this.state.page+1}&pageSie=21`;
          this.setState({loading:true})
          let data = await fetch (url);
          let parcedData = await data.json();
